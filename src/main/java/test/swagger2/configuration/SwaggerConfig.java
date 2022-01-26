@@ -16,23 +16,23 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 import java.util.ArrayList;
 
-//@EnableSwagger2
-//
-//@Configuration
-//public class SwaggerConfig {
-//    @Bean
-//    public Docket api() {
-//        return new Docket(DocumentationType.SWAGGER_2)
-//                .select()
-//                .apis(RequestHandlerSelectors.any())
-//                .paths(PathSelectors.any())
-//                .build();
-//    }
-//}
-
+@EnableSwagger2
 
 @Configuration
-@Import(BeanValidatorPluginsConfiguration.class)
-@EnableSwagger2WebMvc
 public class SwaggerConfig {
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                .build();
+    }
 }
+
+//
+//@Configuration
+//@Import(BeanValidatorPluginsConfiguration.class)
+//@EnableSwagger2WebMvc
+//public class SwaggerConfig {
+//}
