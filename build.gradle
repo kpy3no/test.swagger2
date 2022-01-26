@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version "2.3.10.RELEASE"
+    id 'io.freefair.lombok' version '5.3.3.3'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('io.springfox:springfox-swagger2:3.0.0')
+//    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+    implementation 'io.springfox:springfox-bean-validators:3.0.0'
+    implementation('io.springfox:springfox-swagger-ui:3.0.0')
+    implementation('org.springframework.boot:spring-boot-starter-validation')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+}
+
+test {
+    useJUnitPlatform()
+}
